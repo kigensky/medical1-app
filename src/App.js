@@ -1,10 +1,10 @@
 //import logo from './logo.svg';
 import './App.css';
-
-
-
 import React, { useState } from "react"
 import axios from "axios"
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const [session, setSession] = useState(null)
@@ -126,7 +126,7 @@ function App() {
   }
 
   if (!session) {
-    return <button onClick={handleLogin}>login</button>
+    return <Button onClick={handleLogin}>login</Button>
   }
  console.log({ searchResults })
    console.log({ patientVisits })
