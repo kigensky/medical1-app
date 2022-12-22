@@ -2,9 +2,6 @@
 import './App.css';
 import React, { useState } from "react"
 import axios from "axios"
-import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function App() {
   const [session, setSession] = useState(null)
@@ -126,7 +123,7 @@ function App() {
   }
 
   if (!session) {
-    return <Button onClick={handleLogin}>login</Button>
+    return <button onClick={handleLogin}>login</button>
   }
  console.log({ searchResults })
    console.log({ patientVisits })
@@ -149,7 +146,7 @@ function App() {
                   DoB :{new Date(patient.person.birthdate).toLocaleDateString()}
                 </p>
                 <p>
-                  Grnder : {patient.person.gender === "F" ? "Female" : "Male"}
+                  Gender : {patient.person.gender === "F" ? "Female" : "Male"}
                 </p>
                 <button onClick={() => handleShowVisits(patient.uuid)}>
                   View Visits
@@ -196,5 +193,6 @@ function App() {
     </div>
   )
 }
+
 
 export default App;
