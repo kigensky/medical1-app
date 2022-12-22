@@ -13,8 +13,8 @@ function App() {
   const [patientVisits, setPatientVisits] = useState()
   const [patientVitals, setPatientVitals] = useState()
 
-  const [showVisits, setShowVisits] = useState(false)
-  const [showVitals, setShowVitals] = useState(false)
+  const [, setShowVisits] = useState(false)
+  const [, setShowVitals] = useState(false)
 
   axios.interceptors.request.use(
     (config) => {
@@ -28,7 +28,7 @@ function App() {
       return Promise.reject(error)
     }
   )
-
+  
   const fetchSession = () => {
     let url = "/openmrs/ws/rest/v1/session"
     setIsLoading(true)
