@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 100;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +10,22 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  text-align: left;
+  
+}
+
+body {
+  background-color:powderblue;
+}
+.main {
+  text-align:left;   
+}
+.GFG {
+  color:#009900;
+  font-size:50px;
+  font-weight:bold;
+}
+#geeks {
+  font-style:bold;
+  font-size:20px;
 }

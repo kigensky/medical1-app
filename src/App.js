@@ -2,6 +2,7 @@
 import './App.css';
 import React, { useState } from "react"
 import axios from "axios"
+import Button from 'react-bootstrap/Button';
 
 function App() {
   const [session, setSession] = useState(null)
@@ -123,7 +124,7 @@ function App() {
   }
 
   if (!session) {
-    return <button onClick={handleLogin}>login</button>
+    return <Button onClick={handleLogin}>login</Button>
   }
  console.log({ searchResults })
    console.log({ patientVisits })
@@ -141,19 +142,20 @@ function App() {
           (patient) =>
             patient.person.display.toLowerCase().includes(searchInput) && (
               <div key={patient.uuid}>
-                <p>{patient.person.display}</p>
+              <p>
+                <strong><p>{patient.person.display}</p></strong>
                 <p>
                   DoB :{new Date(patient.person.birthdate).toLocaleDateString()}
                 </p>
                 <p>
                   Gender : {patient.person.gender === "F" ? "Female" : "Male"}
                 </p>
-                <button onClick={() => handleShowVisits(patient.uuid)}>
+                <Button class="btn btn-primary" type="button" data-toggle="collapse" onClick={() => handleShowVisits(patient.uuid)}>
                   View Visits
-                </button>
+                </Button>
                 {patientVisits && (
                   <div>
-                    <p>Visits</p>
+                    <strong><p>Visits</p></strong>
                     {patientVisits.map((visit) => (
                       <div key={visit.uuid}>
                         <p>{visit.display}</p>
@@ -165,7 +167,7 @@ function App() {
                     </button>
                     {patientVitals && (
                       <div>
-                        <p>Vitals</p>
+                        <strong><p>Vitals</p></strong>
                         <ol>
                           {patientVitals
                             .sort(
@@ -183,10 +185,12 @@ function App() {
                               </li>
                             ))}
                         </ol>
+                        
                       </div>
                     )}
                   </div>
                 )}
+              </p>
               </div>
             )
         )}
