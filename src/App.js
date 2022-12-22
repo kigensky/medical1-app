@@ -31,7 +31,7 @@ function App() {
   
   const fetchSession = () => {
     let url = "/openmrs/ws/rest/v1/session"
-    setIsLoading(true)
+    setIsLoading(false)
     fetch(url)
       .then((response) => {
         return response.json()

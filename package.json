@@ -2,7 +2,7 @@
   "name": "medical1-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://kibana.ampath.or.ke/openmrs",
+  "proxy": "https://kibana.ampath.or.ke",
   "homepage": "https://kigensky.github.io/medical1-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
